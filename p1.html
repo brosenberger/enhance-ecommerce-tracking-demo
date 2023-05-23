@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>E-commerce PDP - Bootstrap</title>
 </head>
-<body>
+<body data-eet-pageview='{"event":"view_item", "ecommerce":{"currency":"USD", "value": 99.00, "items":[{"item_name":"Product 1 Title", "item_id": "SKU1", "price": 99.00, "quantity": 1}]}}'>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Super Cool Shop!</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
                 <label for="quantity">Quantity</label>
                 <input type="number" class="form-control" id="quantity" value="1" min="1">
             </div>
-            <button class="btn btn-primary">Add to Cart</button>
+            <button class="btn btn-primary" data-eet-click='{"event":"add_to_cart", "ecommerce":{"items":[{"item_name":"Product 1 Title", "item_id": "SKU1", "price": 99.00, "quantity": 1}]}}'>Add to Cart</button>
         </div>
     </div>
 
@@ -62,6 +62,33 @@
             <h3>Product Details</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
         </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h3>Related Products</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4" data-eet-intersection='{"event":"view_item_list", "ecommerce": {"item_list_name":"Related Products", "item_list_id":"SKU1-related", "items":[{"item_id":"SKU2","item_name":"Product 2 Title"}]}}'>
+                        <img src="logo.png" alt="Product 2 Image" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 2 Title</h5>
+                            <p class="card-text">Product 2 short description.</p>
+                            <a href="#" class="btn btn-primary" data-eet-click='{"event":"select_item","ecommerce":{"items":[{"item_name":"Product 2 Title","item_id":"SKU2"}]}}'>View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4" data-eet-intersection='{"event":"view_item_list", "ecommerce": {"item_list_name":"Related Products", "item_list_id":"SKU1-related", "items":[{"item_id":"SKU3","item_name":"Product 3 Title"}]}}'>
+                        <img src="logo.png" alt="Product 3 Image" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Product 3 Title</h5>
+                            <p class="card-text">Product 3 short description.</p>
+                            <a href="#" class="btn btn-primary" data-eet-click='{"event":"select_item","ecommerce":{"items":[{"item_name":"Product 3 Title","item_id":"SKU3"}]}}'>View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
 
