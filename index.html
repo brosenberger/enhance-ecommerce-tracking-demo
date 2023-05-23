@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>EET Demo</title>
 </head>
-<body>
+<body data-eet-pageview='[{"event":"page1-event"}, {"event":"page2-event"}]'>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Super Cool Shop!</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,9 +57,77 @@
                 <iframe src="https://giphy.com/embed/26n6WywJyh39n1pBu" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/looking-looney-tunes-searching-26n6WywJyh39n1pBu">via GIPHY</a></p>
             </div>
         </div>
+
+        <div class="row">
+            <div class="mt-5 col-md-6">
+                <h2>Categories of Tracking Events</h2>
+                <ul>
+                    <li>Page View Events</li>
+                    <li>Viewport Events</li>
+                    <li>OnClick Events</li>
+                </ul>
+            </div>
+            <div class="mt-5 col-md-6">
+                <iframe src="https://giphy.com/embed/WAPh6PcgMyzw4NcxSv" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/food-fruits-vegetables-WAPh6PcgMyzw4NcxSv">via GIPHY</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-5 col-md-4">
+                <h3>Page View Events</h3>
+                <code><pre>
+&lt;script&gt;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ecommerce: null});
+    window.dataLayer.push({some event data});
+&lt;/script&gt;
+                </pre></code>
+            </div>
+            <div class="mt-5 col-md-4">
+                <h3>Viewport Events</h3>
+            </div>
+            <div class="mt-5 col-md-4">
+                <h3>OnClick Events</h3>
+            </div>
+        </div>
     </div>
 
+    <div class="container mt-5">
+        <h1 class="mb-4">Related Products</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4" data-eet-intersection='{"event":"intersected"}'>
+                    <img src="your-product-image-url1.jpg" alt="Product 1 Image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1 Title</h5>
+                        <p class="card-text">Product 1 short description.</p>
+                        <a href="p1.html" data-eet-click='{"event":"clicked-p1"}' class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="your-product-image-url2.jpg" alt="Product 2 Image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2 Title</h5>
+                        <p class="card-text">Product 2 short description.</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="your-product-image-url3.jpg" alt="Product 3 Image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3 Title</h5>
+                        <p class="card-text">Product 3 short description.</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="https://polyfill.mstage.dev/v3/polyfill.min.js?features=IntersectionObserver"></script>
     <script src="eet.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
